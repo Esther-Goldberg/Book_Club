@@ -1,0 +1,36 @@
+.error {
+    color: #ff1717;
+}
+* {
+    font-family: "Kulim Park", sans-serif
+}
+body{
+    padding: 20px;
+    background-color: #eeeeee;
+}
+a:hover {
+    text-decoration: none;
+    color: #6bffb1;
+}
+.site {
+    font-size: 110%;
+}
+
+.nav {
+    display: inline;
+    margin-left: 10px;
+    vertical-align: center;
+    font-size: 110%;
+}
+.inline {
+    display: inline;
+}
+.avatar {
+    margin-right: 20px;
+}
+.smaller{
+    font-size: 80%;
+}
+.previous, .next, .disabled {
+    margin-right: 15px;
+}

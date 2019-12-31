@@ -1,0 +1,54 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}
+    {% if title %}
+        {{ title }} - Microblog
+    {% else %}
+        Welcome to Microblog
+    {% endif %}
+{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet"
+ href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css"
+ integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt"
+ crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Kulim+Park|Long+Cang&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type = "text/css" href="../static/CSS/main.css" >
+{% endblock %}
+
+{% block navbar %}
+    <nav class="navbar navbar-default container-fluid">
+    <span class = "site">Microblog</span>
+        <a class="nav" href={{ url_for("index") }}>Home</a>
+        {% if current_user.is_anonymous %}
+        <a class="nav" href={{ url_for("login") }}>Login</a>
+        {% else %}
+        <a class="nav" href={{ url_for("explore") }}>Explore</a>
+        <a class="nav" href="{{ url_for("user", username=current_user.username)}}">Profile</a>
+        <a class="nav" href={{ url_for("logout") }}>Logout</a>
+        {% endif %}
+        <hr>
+    </nav>
+{% endblock %}
+
+{% block content %}
+    <hr/>
+    <div class="container">
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                <div class="alert alert-info" role="alert">{{ message }}</div>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    {% block app_content %}{% endblock %}
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    {{ moment.include_moment() }}
+{% endblock %}
