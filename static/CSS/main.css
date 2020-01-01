@@ -7,6 +7,8 @@
 body{
     padding: 20px;
     background-color: #eeeeee;
+    position: relative;
+    top: 80px;
 }
 a:hover {
     text-decoration: none;
@@ -62,4 +64,16 @@ input#submit:hover {
     border-top: 2px solid #b2b2b2;
     background-color: #a0dbc4;
     background-image: linear-gradient(#a8cfce, #beeae9);
+}
+.navbar{
+    position: fixed;
+    z-index: 10;
+    top: 20px;
+    background-color: rgba(160, 219, 196, 0.5);
+    border-radius: 10px;
+    height: 60px;
+
+}
+.navbar a:hover {
+    color: white;
 }
