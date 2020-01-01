@@ -55,12 +55,12 @@ input#submit {
     border: none;
     border-bottom: 2px solid #b2b2b2;
     background-color: #b9e4e3;
-    background: gradient(linear, left top, left bottom, from(#beeae9), to(#a8cfce));
+    background-image: linear-gradient(#beeae9, #a8cfce);
 }
 input#submit:hover {
     color: #333333;
     border: 1px solid #a4a4a4;
     border-top: 2px solid #b2b2b2;
     background-color: #a0dbc4;
-    background: gradient(linear, left top, left bottom, from(#a8cfce), to(#beeae9));
+    background-image: linear-gradient(#a8cfce, #beeae9);
 }
