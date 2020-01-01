@@ -41,7 +41,6 @@ input {
     border: 1px solid #6ad68a;
     border-radius: 5px;
     padding: 5px 5px 5px 10px;
-    display: block;
     margin-bottom: 5px;
 }
 input:focus, input:hover {
