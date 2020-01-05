@@ -66,3 +66,6 @@ sqlalchemy.exc.InvalidRequestError: Incorrect number of values in identifier to 
 2020-01-01 02:21:01,400 INFO: Microblog startup [in C:\Users\Esther Goldberg\PycharmProjects\Esther Goldberg Final Project\app\__init__.py:47]
 2020-01-01 23:22:35,838 INFO: Microblog startup [in C:\Users\Esther Goldberg\PycharmProjects\Esther Goldberg Final Project\app\__init__.py:47]
 2020-01-01 23:23:51,060 INFO: Microblog startup [in C:\Users\Esther Goldberg\PycharmProjects\Esther Goldberg Final Project\app\__init__.py:47]
+2020-01-05 01:43:03,617 INFO: Microblog startup [in C:\Users\Esther Goldberg\PycharmProjects\Esther Goldberg Final Project\app\__init__.py:47]
+2020-01-05 01:43:09,985 INFO: Microblog startup [in C:\Users\Esther Goldberg\PycharmProjects\Esther Goldberg Final Project\app\__init__.py:47]
+2020-01-05 01:43:39,240 INFO: Microblog startup [in C:\Users\Esther Goldberg\PycharmProjects\Esther Goldberg Final Project\app\__init__.py:47]

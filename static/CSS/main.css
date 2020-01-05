@@ -75,7 +75,7 @@ input#submit:hover {
 .navbar a:hover {
     color: white;
 }
-h1 {
+h1, .avatar{
     margin-top: 80px;
 }
 .alert {
