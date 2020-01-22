@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+    <div class="about-title">
+    <h1>About BookClub</h1>
+    </div>
+    <br/>
+    <p class="about">What are your favorite books? BookClub is the site where you can share what you've read with others and discover new books to read.</p>
+    <p class="about">Your fellow BookClub members want to hear about the books you read and found interesting, as well as the ones you disliked and why.</p>
+    <h3>Some tips to help you get started:</h3>
+    <ul>
+    <li>Check out trending books in the <a href="{{ url_for("explore") }}">explore</a> page.</li>
+    <li>Follow readers who have good taste in books for new recommendations.</li>
+    <li>Post reviews about books you liked or disliked and why (but leave out the spoilers!)</li>
+    <li>Help your fellow bookworms identify which book you are posting about by listing the title and author, and tagging the book with a #genre_tag.</li>
+    </ul>
+    <h5>Enjoy, and happy reading!</h5>
+{% endblock %}

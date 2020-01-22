@@ -9,7 +9,12 @@ from datetime import datetime
 from app.email import send_password_reset_email
 
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/')
+@app.route('/about')
+def about():
+    return render_template('about.html', title='About')
+
+
 @app.route('/index', methods=['GET', 'POST'])
 @login_required
 def index():

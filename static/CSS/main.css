@@ -24,7 +24,6 @@ a:hover {
 }
 
 
-
 /*Navbar*/
 
 .navbar{
@@ -36,7 +35,6 @@ a:hover {
     height: 80px;
     margin-right: 30px;
     margin-left: 30px;
-
 }
 
 .navbar a{
@@ -62,8 +60,12 @@ a:hover {
     margin-right: 25px;
 }
 
-.logo{
-    padding: 15px;
+.logo {
+    height: 50px;
+    margin-top: 12px;
+    margin-right: 20px;
+    padding-top: 5px;
+    float: left;
 }
 
 h1, .avatar{
@@ -129,6 +131,30 @@ textarea:focus, textarea:hover {
 .smaller{
     font-size: 80%;
 }
+
+/*About Page*/
+
+.about-title {
+    background-image: url("../images/pages.jpg") ;
+    height: 220px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 20px 20px 20px 20px;
+    margin-top: 100px;
+}
+
+.about-title h1 {
+    font-size: 400%;
+    color: white;
+    font-family: "Alata", sans-serif;
+}
+
+
+.about {
+    font-size: 120%;
+}
+
 
 
 
