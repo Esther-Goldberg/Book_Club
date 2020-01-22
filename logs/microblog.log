@@ -67,3 +67,8 @@ jinja2.exceptions.UndefinedError: 'base' is undefined
 2020-01-22 02:57:52,749 INFO: Microblog startup [in C:\Users\Esther Goldberg\PycharmProjects\Esther Goldberg Final Project\app\__init__.py:47]
 2020-01-22 03:21:09,196 INFO: Microblog startup [in C:\Users\Esther Goldberg\PycharmProjects\Esther Goldberg Final Project\app\__init__.py:47]
 2020-01-22 03:26:25,715 INFO: Microblog startup [in C:\Users\Esther Goldberg\PycharmProjects\Esther Goldberg Final Project\app\__init__.py:47]
+2020-01-22 13:46:19,841 INFO: Microblog startup [in C:\Users\Esther Goldberg\PycharmProjects\Esther Goldberg Final Project\app\__init__.py:47]
+2020-01-22 13:48:53,460 INFO: Microblog startup [in C:\Users\Esther Goldberg\PycharmProjects\Esther Goldberg Final Project\app\__init__.py:47]
+2020-01-22 13:58:37,098 INFO: Microblog startup [in C:\Users\Esther Goldberg\PycharmProjects\Esther Goldberg Final Project\app\__init__.py:47]
+2020-01-22 14:03:19,362 INFO: Microblog startup [in C:\Users\Esther Goldberg\PycharmProjects\Esther Goldberg Final Project\app\__init__.py:47]
+2020-01-22 14:15:38,036 INFO: Microblog startup [in C:\Users\Esther Goldberg\PycharmProjects\Esther Goldberg Final Project\app\__init__.py:47]

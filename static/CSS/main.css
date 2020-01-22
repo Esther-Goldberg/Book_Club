@@ -15,14 +15,16 @@ a:hover {
 }
 
 .alert {
-    margin-top: 100px;
+    margin-top: 90px;
     margin-bottom: 20px;
+    position: absolute;
+    width: 83vw;
+    margin-right: 40px;
 }
 
 .previous, .next, .disabled {
     margin-right: 15px;
 }
-
 
 /*Navbar*/
 
@@ -72,6 +74,26 @@ h1, .avatar{
     margin-top: 100px;
 }
 
+/*Title*/
+
+.title {
+    background-image: url("../images/books_colorful.jpeg") ;
+    height: 220px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 20px;
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+
+.title h1{
+    font-size: 400%;
+    color: white;
+    font-family: "Cutive Mono", monospace;
+    background-color: rgba(2, 2, 2, .7);
+    padding: 10px 10px 10px 25px;
+}
 
 /*Forms*/
 
@@ -134,28 +156,16 @@ textarea:focus, textarea:hover {
 
 /*About Page*/
 
-.about-title {
-    background-image: url("../images/pages.jpg") ;
-    height: 220px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding-top: 20px;
-    margin-top: 100px;
-}
-
-.about-title h1 {
-    font-size: 400%;
-    color: white;
-    font-family: "Cutive Mono", monospace;
-    background-color: rgba(2, 2, 2, .7);
-    padding: 10px 10px 10px 25px;
-}
-
-
 .about {
     font-size: 120%;
     line-height: 90%;
+}
+
+.tips {
+    background-color: white;
+    padding: 20px 20px 40px 40px;
+    border-radius: 15px;
+    margin-bottom: 20px;
 }
 
 
