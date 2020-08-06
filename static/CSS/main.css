@@ -18,8 +18,9 @@ a:hover {
     margin-top: 90px;
     margin-bottom: 20px;
     position: absolute;
-    width: 83vw;
-    margin-right: 40px;
+    width: 50vw;
+    left: 50%;
+    margin-left: -25vw;
 }
 
 .previous, .next, .disabled {
