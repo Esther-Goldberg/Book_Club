@@ -84,8 +84,11 @@ class User(UserMixin, db.Model):
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     body = db.Column(db.String(140))
-    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow())
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    parent_id = db.Column(db.Integer, db.ForeignKey('post.id'))
+
+    parent = db.relationship('Post', remote_side=[id], backref='children')
 
     def __repr__(self):
         return '<Post {}>'.format(self.body)

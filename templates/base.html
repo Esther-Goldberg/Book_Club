@@ -17,7 +17,7 @@
 {% endblock %}
 
 {% block navbar %}
-    <nav class="navbar navbar-default container-fluid navbar-fixed-top">
+    <nav class="navbar navbar-default container-fluid navbar-fixed-top hide-on-mobile">
         <img class="logo" alt="logo" src="../static/images/logo.png">
         <a class="nav navbar-nav" href={{ url_for("index") }}>Home</a>
         <a class="nav navbar-nav" href={{ url_for("about") }}>About</a>
@@ -27,6 +27,19 @@
         <a class="nav navbar-nav" href={{ url_for("explore") }}>Explore</a>
         <a class="nav navbar-nav" href="{{ url_for("user", username=current_user.username)}}">Profile</a>
         <a class="nav navbar-nav right" href={{ url_for("logout") }}>Logout</a>
+        {% endif %}
+    </nav>
+
+    <nav class="navbar container-fluid hide-on-desktop hide-on-tablet">
+        <div class="logo-div"><img class="logo-mobile" alt="logo" src="../static/images/logo.png"></div>
+        <a class="mobile-nav" href={{ url_for("index") }}>Home</a>
+        <a class="mobile-nav" href={{ url_for("about") }}>About</a>
+        {% if current_user.is_anonymous %}
+        <a class="mobile-nav" href={{ url_for("login") }}>Login</a>
+        {% else %}
+        <a class="mobile-nav" href={{ url_for("explore") }}>Explore</a>
+        <a class="mobile-nav" href="{{ url_for("user", username=current_user.username)}}">Profile</a>
+        <a class="mobile-nav" href={{ url_for("logout") }}>Logout</a>
         {% endif %}
     </nav>
 {% endblock %}

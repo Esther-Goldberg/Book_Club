@@ -12,6 +12,16 @@
              said {{ moment(post.timestamp).fromNow() }}:
             <br>
             {{ post.body }}
+            <div class="extras">
+            <a href="{{ url_for("discussion", parent_id = post.id) }}" class='extras'>{{ post.children|length }} {% if post.children|length == 1 %}reply{% else %}replies{% endif %}</a>
+            </div>
+
+            {% if post.author == current_user %}
+                <div class="extras">
+                    <a href="{{ url_for("delete_post", post_id = post.id) }}" class='extras confirm'>delete</a>
+                </div>
+            {% endif %}
+
         </td>
     </tr>
 </table>

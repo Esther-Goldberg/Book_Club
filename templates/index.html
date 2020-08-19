@@ -2,23 +2,48 @@
 
 {% block app_content %}
     <div class="title">
-    <h1>Hello, {{ current_user.username }}!</h1>
+        <h1>Hello, {{ current_user.username }}!</h1>
     </div>
+
+    {% if parent %}
+        <table class="table">
+            <tr class="center">
+                <td width="150px">
+                    <a href="{{ url_for('user', username=parent.author.username) }}">
+                        <img src="{{ parent.author.avatar(128) }}"/>
+                    </a>
+                </td>
+                <td>
+        <span class="highlighted-post">
+            <a href="{{ url_for('user', username=parent.author.username) }}">
+                {{ parent.author.username }}
+            </a>
+        said {{ moment(parent.timestamp).fromNow() }}:
+        <p>{{ parent.body }}</p>
+        </span>
+                    {% if parent.author == current_user %}
+                        <a href="{{ url_for("delete_post", post_id = parent.id) }}" class='extras confirm'>delete</a>
+                    {% endif %}
+                </td>
+            </tr>
+        </table>
+    {% endif %}
+
     {% if form %}
-    <form action="" method="POST">
-    {{ form.hidden_tag() }}
-    <p>
-        {{ form.post.label }}<br/>
-        {{ form.post(cols=50 , rows=4) }}<br/>
-        {% for error in form.post.errors %}
-        <span class="error">{{ error }}</span>
-        {% endfor %}
-    </p>
-    <p>{{ form.submit() }}</p>
-    </form>
+        <form action="" method="POST">
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.post.label }}<br/>
+                {{ form.post(cols=50 , rows=4) }}<br/>
+                {% for error in form.post.errors %}
+                    <span class="error">{{ error }}</span>
+                {% endfor %}
+            </p>
+            <p>{{ form.submit() }}</p>
+        </form>
     {% endif %}
     {% for post in posts %}
-    {% include "_post.html" %}
+        {% include "_post.html" %}
     {% endfor %}
 
     <nav aria-label="pages">
@@ -35,4 +60,18 @@
             </li>
         </ul>
     </nav>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script type="text/javascript">
+    var confirm_class = document.getElementsByClassName('confirm')
+    var confirmIt = function (e)
+    {
+        if (!confirm("Are you sure you want to permanently delete this post and all of its replies?")) e.preventDefault();
+    };
+    for (var i = 0, l = confirm_class.length; i < l; i++) {
+        confirm_class[i].addEventListener('click', confirmIt, false);
+    }
+</script>
 {% endblock %}
