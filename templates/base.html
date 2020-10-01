@@ -11,8 +11,9 @@
 {% block styles %}
     {{ super() }}
     <link rel="stylesheet" type="text/css" href="../static/CSS/unsemantic-grid-responsive-tablet-no-ie7.css">
-    <link href="https://fonts.googleapis.com/css?family=Kulim+Park|Roboto+Mono|Cutive+Mono&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type = "text/css" href="../static/CSS/main.css" >
+    <link href="https://fonts.googleapis.com/css?family=Kulim+Park|Roboto+Mono|Cutive+Mono&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../static/CSS/main.css">
     <link rel="icon" href="../static/favicon.ico">
 {% endblock %}
 
@@ -22,45 +23,61 @@
         <a class="nav navbar-nav" href={{ url_for("index") }}>Home</a>
         <a class="nav navbar-nav" href={{ url_for("about") }}>About</a>
         {% if current_user.is_anonymous %}
-        <a class="nav navbar-nav right" href={{ url_for("login") }}>Login</a>
+            <a class="nav navbar-nav right" href={{ url_for("login") }}>Login</a>
         {% else %}
-        <a class="nav navbar-nav" href={{ url_for("explore") }}>Explore</a>
-        <a class="nav navbar-nav" href="{{ url_for("user", username=current_user.username)}}">Profile</a>
-        <a class="nav navbar-nav right" href={{ url_for("logout") }}>Logout</a>
+            <a class="nav navbar-nav" href={{ url_for("explore") }}>Explore</a>
+            <a class="nav navbar-nav" href="{{ url_for("user", username=current_user.username) }}">Profile</a>
+            <a class="nav navbar-nav right" href={{ url_for("logout") }}>Logout</a>
         {% endif %}
     </nav>
 
     <nav class="navbar container-fluid hide-on-desktop hide-on-tablet">
-        <div class="logo-div"><img class="logo-mobile" alt="logo" src="../static/images/logo.png"></div>
-        <a class="mobile-nav" href={{ url_for("index") }}>Home</a>
-        <a class="mobile-nav" href={{ url_for("about") }}>About</a>
-        {% if current_user.is_anonymous %}
-        <a class="mobile-nav" href={{ url_for("login") }}>Login</a>
-        {% else %}
-        <a class="mobile-nav" href={{ url_for("explore") }}>Explore</a>
-        <a class="mobile-nav" href="{{ url_for("user", username=current_user.username)}}">Profile</a>
-        <a class="mobile-nav" href={{ url_for("logout") }}>Logout</a>
-        {% endif %}
+        <a href="{{ url_for("index") }}"><img class="logo-mobile" alt="logo" src="../static/images/logo.png"></a>
+        <div id="navigation-links">
+            <a class="mobile-nav" href={{ url_for("index") }}>Home</a>
+            <a class="mobile-nav" href={{ url_for("about") }}>About</a>
+            {% if current_user.is_anonymous %}
+                <a class="mobile-nav" href={{ url_for("login") }}>Login</a>
+            {% else %}
+                <a class="mobile-nav" href={{ url_for("explore") }}>Explore</a>
+                <a class="mobile-nav" href="{{ url_for("user", username=current_user.username) }}">Profile</a>
+                <a class="mobile-nav" href={{ url_for("logout") }}>Logout</a>
+            {% endif %}
+        </div>
+    <a href="javascript:void(0);" onclick="showMenu()">
+        <img class="menu-button" src="../static/images/hamburger-menu.png">
+    </a>
     </nav>
 {% endblock %}
 
 {% block content %}
     <div class="container">
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            {% for message in messages %}
-                <div class="alert alert-info" role="alert">
-                    {{ message }}
-                </div>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
-    {% block app_content %}
-    {% endblock %}
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-info" role="alert">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        {% block app_content %}
+        {% endblock %}
     </div>
 {% endblock %}
 
 {% block scripts %}
     {{ super() }}
     {{ moment.include_moment() }}
+    <script>
+        function showMenu() {
+            var menu = document.getElementById("navigation-links");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            }
+            else {
+                menu.style.display = "block";
+            }
+         }
+    </script>
 {% endblock %}
