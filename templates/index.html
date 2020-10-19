@@ -39,9 +39,11 @@
                     <span class="error">{{ error }}</span>
                 {% endfor %}
             </p>
+            <p> {{ form.tags.label }} {{ form.tags(cols=50, rows=1) }}</p>
             <p>{{ form.submit() }}</p>
         </form>
     {% endif %}
+
     {% for post in posts %}
         {% include "_post.html" %}
     {% endfor %}

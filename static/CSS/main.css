@@ -241,6 +241,15 @@ textarea:focus, textarea:hover {
     font-size: 200%;
 }
 
+.label {
+    font-size: 100%;
+    margin-right: 10px;
+}
+
+.label-default {
+    background-color: rgb(160, 219, 196);
+}
+
 
 
 
