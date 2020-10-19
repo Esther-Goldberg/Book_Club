@@ -3,7 +3,7 @@ from sqlalchemy import null
 from werkzeug.urls import url_parse
 from app import app, db
 from flask_login import current_user, login_user, logout_user, login_required
-from app.models import User, Post
+from app.models import User, Post, Tag
 from app.forms import RegistrationForm, EditProfileForm, LoginForm, PostForm, ResetPasswordRequestForm, \
     ResetPasswordForm, ReplyForm
 from datetime import datetime
@@ -23,6 +23,16 @@ def index():
     if form.validate_on_submit():
         post = Post(body=form.post.data, author=current_user)
         db.session.add(post)
+
+        tags = form.tags.data.lower().strip().split('#')
+        for element in tags:
+            if element != '':
+                tag = db.session.query(Tag).filter_by(name=element).first()
+                if tag is None:
+                    tag = Tag(name=element)
+                    db.session.add(tag)
+                post.add_tag(tag)
+
         db.session.commit()
         flash('Your post is now live!')
         return redirect(url_for('index'))
