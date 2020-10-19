@@ -39,7 +39,10 @@
                     <span class="error">{{ error }}</span>
                 {% endfor %}
             </p>
+            {% if form.tags %}
             <p> {{ form.tags.label }} {{ form.tags(cols=50, rows=1) }}</p>
+            {% endif %}
+
             <p>{{ form.submit() }}</p>
         </form>
     {% endif %}
